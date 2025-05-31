@@ -9,6 +9,8 @@ from utils import load_multiple_datasets, evaluate_model
 # <<<< Inference Settings <<<<
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+BATCH_SIZE = 10
+
 CHECKPOINT_DIRECTORY = "./data/checkpoint"
 # >>>> Inference Settings >>>>
 
@@ -68,7 +70,8 @@ if __name__ == "__main__":
         exit()
 
     _train_loader, test_loader = load_multiple_datasets(
-        dataset_ids=["minpeter/mnist", "minpeter/mnist-user-input"]
+        dataset_ids=["minpeter/mnist", "minpeter/mnist-user-input"],
+        batch_size_param=BATCH_SIZE,
     )
     print("Test data loaded.")
 

@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import Canvas, Button, Label, Frame, messagebox
-from PIL import Image, ImageDraw, ImageOps, ImageFilter, ImageTk
-import numpy as np
+from PIL import Image, ImageDraw, ImageOps, ImageTk
 import torch
 import torchvision.transforms as T
 import os
@@ -12,7 +11,7 @@ from model import NeuralNetwork
 
 # <<<< Settings <<<<
 DATA_DIRECTORY = "./data"
-CHECKPOINT_DIRECTORY = os.path.join(DATA_DIRECTORY, "checkpoint_v1")
+CHECKPOINT_DIRECTORY = os.path.join(DATA_DIRECTORY, "checkpoint")
 USER_DRAWINGS_DATASET_PATH = os.path.join(
     DATA_DIRECTORY, "dataset/user_drawn_digits.parquet"
 )

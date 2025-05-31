@@ -13,6 +13,8 @@ HIDDEN_SIZE = 100  # 은닉층의 뉴런 수 (책에서 30 또는 100 사용)
 OUTPUT_SIZE = 10  # 출력층의 뉴런 수 (0~9 숫자 클래스)
 LEARNING_RATE = 3.0  # 학습률 (책에서 eta=3.0 사용)
 
+BATCH_SIZE = 10
+
 EPOCHS = 10  # 학습 에포크 수 (책에서는 30 에포크, 여기서는 시간 단축 위해 줄임)
 
 CHECKPOINT_DIRECTORY = "./data/checkpoint"
@@ -63,7 +65,8 @@ def train_single_model(
 
 if __name__ == "__main__":
     train_loader, test_loader = load_multiple_datasets(
-        dataset_ids=["minpeter/mnist", "minpeter/mnist-user-input"]
+        dataset_ids=["minpeter/mnist", "minpeter/mnist-user-input"],
+        batch_size_param=BATCH_SIZE,
     )
     print("MNIST data loaded.")
 
