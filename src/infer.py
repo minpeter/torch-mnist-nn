@@ -9,7 +9,7 @@ from utils import load_mnist_data, evaluate_model
 # <<<< Inference Settings <<<<
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-CHECKPOINT_DIRECTORY = "./my_mnist_checkpoint"
+CHECKPOINT_DIRECTORY = "./data/my_mnist_checkpoint"
 # >>>> Inference Settings >>>>
 
 print(f"Using device: {DEVICE}")

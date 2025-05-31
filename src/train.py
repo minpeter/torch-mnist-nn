@@ -15,7 +15,7 @@ LEARNING_RATE = 3.0  # 학습률 (책에서 eta=3.0 사용)
 
 EPOCHS = 10  # 학습 에포크 수 (책에서는 30 에포크, 여기서는 시간 단축 위해 줄임)
 
-CHECKPOINT_DIRECTORY = "./my_mnist_checkpoint"
+CHECKPOINT_DIRECTORY = "./data/my_mnist_checkpoint"
 # >>>> Setting & Hyperparameters >>>>
 
 print(f"Using device: {DEVICE}")
