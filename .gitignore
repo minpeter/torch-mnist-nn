@@ -11,3 +11,6 @@ wheels/
 
 # Train model checkpoint
 my_mnist_checkpoint
+
+# debugging files
+debug_playground_processed_input.png
