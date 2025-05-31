@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from torchvision import transforms  # 시각화 함수 내에서 사용
 
 from model import NeuralNetwork
-from utils import load_mnist_data, evaluate_model
+from utils import load_multiple_datasets, evaluate_model
 
 # <<<< Inference Settings <<<<
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -67,7 +67,9 @@ if __name__ == "__main__":
         )
         exit()
 
-    _train_loader, test_loader = load_mnist_data()
+    _train_loader, test_loader = load_multiple_datasets(
+        dataset_ids=["minpeter/mnist", "minpeter/mnist-user-input"]
+    )
     print("Test data loaded.")
 
     criterion = nn.CrossEntropyLoss()

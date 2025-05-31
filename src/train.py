@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.optim as optim
 
 from model import NeuralNetwork
-from utils import load_mnist_data, evaluate_model  # 수정된 임포트
+from utils import load_multiple_datasets, evaluate_model  # 수정된 임포트
 
 # <<<< Setting & Hyperparameters <<<<
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -62,7 +62,9 @@ def train_single_model(
 
 
 if __name__ == "__main__":
-    train_loader, test_loader = load_mnist_data()
+    train_loader, test_loader = load_multiple_datasets(
+        dataset_ids=["minpeter/mnist", "minpeter/mnist-user-input"]
+    )
     print("MNIST data loaded.")
 
     # 모델, 손실 함수, 옵티마이저 초기화
