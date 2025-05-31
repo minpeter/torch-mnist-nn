@@ -11,7 +11,7 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 INPUT_SIZE = 28 * 28  # MNIST 이미지 크기 (28x28 = 784 픽셀)
 HIDDEN_SIZE = 100  # 은닉층의 뉴런 수 (책에서 30 또는 100 사용)
 OUTPUT_SIZE = 10  # 출력층의 뉴런 수 (0~9 숫자 클래스)
-LEARNING_RATE = 3.0  # 학습률 (책에서 eta=3.0 사용)
+LEARNING_RATE = 1e-3  # 학습률 (책에서 eta=3.0 사용)
 
 BATCH_SIZE = 10
 
@@ -75,7 +75,7 @@ if __name__ == "__main__":
     criterion = nn.CrossEntropyLoss()  # 다중 클래스 분류에 적합 (Softmax + NLLLoss)
 
     # 책에서 Stochastic Gradient Descent (SGD)를 사용했으므로 여기서도 SGD 사용
-    optimizer = optim.SGD(model.parameters(), lr=LEARNING_RATE)
+    optimizer = optim.AdamW(model.parameters(), lr=LEARNING_RATE)
 
     print("Model, Criterion, Optimizer initialized.")
     print(
