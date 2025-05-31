@@ -12,8 +12,10 @@ from model import NeuralNetwork
 
 # <<<< Settings <<<<
 DATA_DIRECTORY = "./data"
-CHECKPOINT_DIRECTORY = os.path.join(DATA_DIRECTORY, "my_mnist_checkpoint")
-USER_DRAWINGS_DATASET_PATH = os.path.join(DATA_DIRECTORY, "user_drawn_digits.parquet")
+CHECKPOINT_DIRECTORY = os.path.join(DATA_DIRECTORY, "checkpoint")
+USER_DRAWINGS_DATASET_PATH = os.path.join(
+    DATA_DIRECTORY, "dataset/user_drawn_digits.parquet"
+)
 DEBUG_IMAGE_SAVE_PATH = os.path.join(
     DATA_DIRECTORY, "debug_playground_processed_input.png"
 )
