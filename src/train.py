@@ -15,7 +15,7 @@ LEARNING_RATE = 3.0  # 학습률 (책에서 eta=3.0 사용)
 
 BATCH_SIZE = 10
 
-EPOCHS = 10  # 학습 에포크 수 (책에서는 30 에포크, 여기서는 시간 단축 위해 줄임)
+EPOCHS = 20  # 학습 에포크 수 (책에서는 30 에포크, 여기서는 시간 단축 위해 줄임)
 
 CHECKPOINT_DIRECTORY = "./data/checkpoint"
 # >>>> Setting & Hyperparameters >>>>

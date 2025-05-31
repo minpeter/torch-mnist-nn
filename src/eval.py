@@ -6,13 +6,13 @@ from torchvision import transforms  # 시각화 함수 내에서 사용
 from model import NeuralNetwork
 from utils import load_multiple_datasets, evaluate_model
 
-# <<<< Inference Settings <<<<
+# <<<< Eval Settings <<<<
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 BATCH_SIZE = 10
 
 CHECKPOINT_DIRECTORY = "./data/checkpoint"
-# >>>> Inference Settings >>>>
+# >>>> Eval Settings >>>>
 
 print(f"Using device: {DEVICE}")
 
