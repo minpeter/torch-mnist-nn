@@ -12,7 +12,7 @@ from model import NeuralNetwork
 
 # <<<< Settings <<<<
 DATA_DIRECTORY = "./data"
-CHECKPOINT_DIRECTORY = os.path.join(DATA_DIRECTORY, "checkpoint")
+CHECKPOINT_DIRECTORY = os.path.join(DATA_DIRECTORY, "checkpoint_v1")
 USER_DRAWINGS_DATASET_PATH = os.path.join(
     DATA_DIRECTORY, "dataset/user_drawn_digits.parquet"
 )
@@ -369,7 +369,10 @@ class DigitRecognizerApp:
             if self.collected_data:
                 os.makedirs(os.path.dirname(USER_DRAWINGS_DATASET_PATH), exist_ok=True)
                 features = datasets.Features(
-                    {"image": datasets.Image(), "label": datasets.Value("int8")}
+                    {
+                        "image": datasets.Image(),
+                        "label": datasets.ClassLabel(num_classes=10),
+                    }
                 )
                 new_data_dict = {"image": [], "label": []}
                 for item in self.collected_data:
